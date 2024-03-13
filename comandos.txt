@@ -1,0 +1,32 @@
+para instalar breeze
+
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm run dev
+
+para poner los mensajes de error en español copiamos el repositorio en git 
+git clone https://github.com/MarcoGomesr/laravel-validation-en-espanol.git resources/lang
+
+PARA CREAR UN CONTROLADOR CON LAS FUNCIONES CREADAS
+
+php artisan make:controller VacanteController -r
+
+PARA INSTALAR LIVEWIRE
+composer require livewire/livewire
+
+PARA EDITAR LA PAGINACION DE LARAVEL AL ESPAÑOL LA PUBLICAMOS EN VENDOR
+php artisan vendor:publish --tag=laravel-pagination
+
+PARA CREAR UNA POLICY Y RESTRINGIR EL ACCESO A CIERTAS ACCIONES DE NUESTRO FORMULARIO A USUARIOS
+php artisan make:policy VacantePolicy --model=Vacante
+
+
+NOTIFICACIONES 
+permiten saber cuando un evento ocurre en la aplicacion
+*una venta  etc..
+pueden ser enviadas de diferentes formaas en una pg web,email,SMS
+
+php artisan make:notification Nuevanotificacion
+
+PARA CREAR LA TABLA DE NOTIFICACIONES 
+php artisan notifications:table
