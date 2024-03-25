@@ -18,7 +18,6 @@ return new class extends Migration
             $table->mediumText('description');
             $table->string('priority');
             $table->date('due_date');
-            $table->boolean(0);
             $table->timestamps();
         });
     }

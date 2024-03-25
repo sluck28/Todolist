@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TareaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,19 @@ Route::get('/', function () {
     return view('auth.login');
 })->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
+/**Tareas */
+Route::get('/dashboard', [TareaController::class,'index'])->middleware(['auth', 'verified'])->name('tareas.index');
+Route::get('/tarea/create', [TareaController::class,'create'])->middleware(['auth', 'verified'])->name('tareas.create');
+
+
+
+
+
+/**Perfil */
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
